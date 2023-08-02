@@ -1,0 +1,56 @@
+<ion-header class="bg-primary-color">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title class="">Back</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding" overflow-scroll="true">
+  <h1 class="font-['Open_Sans'] pl-6 text-4xl mt-2 text-gray-700">Events</h1>
+
+  <div class="flex items-center dark:bg-gray-900 font-['Open_Sans']">
+    <div class="container max-w-6xl px-5 mx-auto my-6">
+      <div class="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="flex items-center justify-between p-5 rounded-lg shadow-sm"
+          *ngFor="let inquiry of inquiries"  [style.background]="randomBackgroundColor()">
+          <div>
+            <div class="text-sm text-white ">Event id : {{inquiry.id}}</div>
+            <div class="flex items-center pt-1">
+              <div class="text-xl font-medium text-white ">
+                <h2 class="ellipsis">{{inquiry.brideName}} & {{inquiry.groomName}}</h2>
+              </div>
+            </div>
+          </div>
+          <div class="text-gray-300">
+            <ion-icon name="chevron-forward-outline" class="text-white"></ion-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>
+
+<ion-toolbar>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="home">
+        <ion-icon name="infinite-outline"></ion-icon>
+        Events
+
+      </ion-tab-button>
+      <ion-tab-button tab="radio">
+        <ion-icon name="calendar-outline"></ion-icon>
+        Planner
+      </ion-tab-button>
+      <ion-tab-button tab="library">
+        <ion-icon name="people-outline"></ion-icon>
+        Vendor
+      </ion-tab-button>
+      <ion-tab-button tab="search">
+        <ion-icon name="person-circle-outline"></ion-icon>
+        Account
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-toolbar>
