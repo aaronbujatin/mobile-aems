@@ -7,13 +7,17 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { InquiryDetailsComponent } from './components/inquiry-details/inquiry-details.component';
 import { LoginComponent } from './components/login/login.component';
-import { PlannerComponent } from './components/planner/planner.component';
-import { AccountComponent } from './components/account/account.component';
+
 
 @NgModule({
-  declarations: [AppComponent, InquiryDetailsComponent, LoginComponent, PlannerComponent, AccountComponent],
+  declarations: [AppComponent, 
+    InquiryDetailsComponent, 
+    LoginComponent, 
+   
+  ],
   imports: [BrowserModule,
-  IonicModule.forRoot(),
+
+IonicModule.forRoot(),
     AppRoutingModule,
     HttpClientModule
   ],

@@ -1,0 +1,12 @@
+.ellipsis {
+    white-space: nowrap;
+    /* Prevent text from wrapping to the next line */
+    overflow: hidden;
+    /* Hide overflowing text */
+    text-overflow: ellipsis;
+    /* Show ellipsis (...) when text overflows */
+    /* Optionally, you can also set a specific width to limit the container's size */
+    max-width: 310px;
+}
+
+

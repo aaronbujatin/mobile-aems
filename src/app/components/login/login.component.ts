@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { InquiryDetailsComponent } from '../inquiry-details/inquiry-details.component';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
+ 
 })
 export class LoginComponent  implements OnInit {
 
@@ -16,7 +17,15 @@ export class LoginComponent  implements OnInit {
   onClick() {
     console.log("Login button clicked");
 
-    this.router.navigate(['/inquiry']);
+    // this.router.navigate(['/inquiry']);
+  }
+
+  component = InquiryDetailsComponent;
+
+  
+
+  navigate(){
+    this.router.navigate(['/tabs/events'])
   }
 
 

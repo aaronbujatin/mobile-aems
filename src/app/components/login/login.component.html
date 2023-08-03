@@ -28,11 +28,13 @@
       </div>
       <div class="w-full mx-auto flex justify-center">
         <button type="submit" class=" bg-[#E8AAAD] px-5 py-3 text-base font-bold tracking-widest text-white w-full"
-          (click)="onClick()">
+          (click)="navigate()">
           Login
         </button>
       </div>
-
+      <ion-nav-link router-direction="forward" [component]="component">
+        <ion-button>Navigate</ion-button>
+      </ion-nav-link>
     </form>
   </div>
 </ion-content>

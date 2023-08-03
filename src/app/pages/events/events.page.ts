@@ -1,16 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { EventsService } from 'src/app/service/events.service';
-import { Inquiries } from './../../model/inquiries.model';
-import { CustomColors } from 'src/app/model/custom-colors.model';
 import { NavController } from '@ionic/angular';
+import { CustomColors } from 'src/app/model/custom-colors.model';
+import { Inquiries } from 'src/app/model/inquiries.model';
+import { EventsService } from 'src/app/service/events.service';
 
 @Component({
-  selector: 'app-inquiry-details',
-  templateUrl: './inquiry-details.component.html',
-  styleUrls: ['./inquiry-details.component.css'],
+  selector: 'app-events',
+  templateUrl: './events.page.html',
+  styleUrls: ['./events.page.scss'],
 })
-
-export class InquiryDetailsComponent  implements OnInit {
+export class EventsPage implements OnInit {
 
   constructor(private eventService : EventsService, private navCtrl : NavController) { }
 
@@ -35,16 +34,11 @@ export class InquiryDetailsComponent  implements OnInit {
   }
 
   customColors: CustomColors = {
-    customColor1: '#85E2CD',
-    customColor2: '#D0E6A5',
-    customColor3: '#FEDE95',
-    customColor4: '#F9897B',
-    customColor5: '#CBACD8',
-    customColor6: '#F4CEC5',
-    customColor7: '#E79796',
-    customColor8: '#FFC98B',
-    customColor9: '#FEB183',
-    customColor10:'#C5C19B',
+    customColor1: '#A19AFD',
+    customColor2: '#FFCE65',
+    customColor3: '#9ACF59',
+    customColor4: '#FF8F7D',
+    
   };
 
   assignRandomColor(data: any[]) {
