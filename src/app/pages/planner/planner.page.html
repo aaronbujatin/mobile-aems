@@ -8,27 +8,29 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <div class="flex justify-between mt-2">
+  <div class="flex justify-between mt-2 ">
     <h1 class="font-['Pp_Fragments'] pl-6 text-4xl  text-gray-700">Planner</h1>
-    <ion-buttons class="mr-6">
-      <ion-icon name="add-circle-outline" class="text-4xl text-red-300"></ion-icon>
+    <ion-buttons class="mr-6 bg-[#FAFAFA] px-3 py-2 rounded-lg shadow-md" id="open-modal" expand="block">
+      <ion-icon name="add-circle-outline" class="text-2xl text-red-300"></ion-icon>
+      <h3 class="font-['Open_Sans'] text-gray-700">Add plan</h3>
     </ion-buttons>
   </div>
   <div class="flex items-center dark:bg-gray-900 font-['Open_Sans']">
     <div class="container max-w-6xl px-5 mx-auto my-6">
       <div class="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
-        <div class="flex border-l-8 border-l-red-200 items-center bg-white justify-between p-5 rounded-lg shadow-xl">
+        <div class="flex border-l-8 border-l-red-200 items-center bg-white justify-between p-5 rounded-lg shadow-xl"
+          *ngFor="let plan of planners">
           <div>
-            <div class="text-xl ellipsis text-gray-700 ">Meeting with the couple</div>
+            <div class="text-xl ellipsis text-gray-700 ">{{plan.message}}</div>
             <div class="flex items-center pt-1">
               <div class="text-sm font-medium">
                 <div class="flex">
                   <ion-icon name="time-outline" class="text-red-400 text-base pr-1"></ion-icon>
-                  <h2 class="ellipsis text-gray-700">1PM - 2Pm</h2>
+                  <h2 class="ellipsis text-gray-700">{{plan.date}} {{plan.time}}</h2>
                 </div>
                 <div class="flex mt-1">
                   <ion-icon name="location-outline" class="text-red-400 text-base pr-1"></ion-icon>
-                  <h2 class="ellipsis text-gray-700">San Isidro</h2>
+                  <h2 class="ellipsis text-gray-700">{{plan.location}}</h2>
                 </div>
               </div>
             </div>
@@ -42,4 +44,69 @@
       </div>
     </div>
   </div>
+  <ion-modal trigger="open-modal" (willDismiss)="onWillDismiss($event)">
+    <ng-template>
+      
+      <ion-content class="ion-padding">
+        <form action="" class="mx-auto mb-0 mt-8 max-w-md space-y-4 px-10 font-['Open_Sans']" #plannerForm="ngForm"
+          >
+          <div>
+            <label for="message" class="sr-only">Enter to do</label>
+
+            <div class="relative">
+              <input class="w-full  border-2 border-[#E8AAAD] p-4 pe-12 text-sm shadow-sm outline-none rounded-lg"
+                placeholder="Enter to do" id="message" type="text" required [(ngModel)]="planner.message"
+                name="message" />
+              <p>{{planner.message}}</p>
+            </div>
+          </div>
+
+          <div>
+            <label for="location" class="sr-only">Enter location</label>
+
+            <div class="relative">
+              <input class="w-full  border-2 border-[#E8AAAD] p-4 pe-12 text-sm shadow-sm outline-none rounded-lg"
+                placeholder="Enter location" id="location" type="text" required [(ngModel)]="planner.location"
+                name="location" />
+            </div>
+          </div>
+
+          <h2>Set date and time :</h2>
+          <div>
+            <label for="date" class="sr-only">Enter location</label>
+
+            <div class="relative">
+              <input class="w-full  border-2 border-[#E8AAAD] p-4 pe-12 text-sm shadow-sm outline-none rounded-lg"
+                placeholder="Enter date and time" id="date" type="date" required [(ngModel)]="planner.date"
+                name="date" />
+              <p>{{planner.date}}</p>
+            </div>
+          </div>
+          <div>
+            <label for="time" class="sr-only">Enter location</label>
+
+            <div class="relative">
+              <input class="w-full  border-2 border-[#E8AAAD] p-4 pe-12 text-sm shadow-sm outline-none rounded-lg"
+                placeholder="Enter date and time" id="time" type="time" required [(ngModel)]="planner.time"
+                name="time" />
+            </div>
+          </div>
+          <div class="flex justify-end ">
+            <button (click)="cancel()" class=" bg-white px-4 py-2 mr-2 rounded-md " expand="block">
+              <div class="flex">
+                <h3 class="font-['Open_Sans'] text-[#E8AAAD]">Cancel</h3>
+              </div>
+            </button>
+            <button type="submit" class=" bg-[#E8AAAD] px-4 py-2  rounded-md " (click)="confirm()" expand="block">
+              <div class="flex">
+               
+                <h3 class="font-['Open_Sans'] text-white">Confirm</h3>
+              </div>
+            </button>
+            
+          </div>
+        </form>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
 </ion-content>
