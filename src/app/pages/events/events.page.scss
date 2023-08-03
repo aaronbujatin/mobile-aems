@@ -8,5 +8,7 @@
     /* Optionally, you can also set a specific width to limit the container's size */
     max-width: 310px;
 }
-
+ion-content {
+    --ion-background-color: #F9F5F2;
+}
 

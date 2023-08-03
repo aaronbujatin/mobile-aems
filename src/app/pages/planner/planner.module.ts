@@ -7,14 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { PlannerPageRoutingModule } from './planner-routing.module';
 
 import { PlannerPage } from './planner.page';
+import { TimeFormatPipe } from './time-format.pipe';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    PlannerPageRoutingModule
+    PlannerPageRoutingModule,
+    
   ],
-  declarations: [PlannerPage]
+  declarations: [PlannerPage, TimeFormatPipe]
 })
 export class PlannerPageModule {}

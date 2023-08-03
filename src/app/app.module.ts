@@ -8,12 +8,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { InquiryDetailsComponent } from './components/inquiry-details/inquiry-details.component';
 import { LoginComponent } from './components/login/login.component';
 import { FormsModule } from '@angular/forms';
+import { TimeFormatPipe } from './pages/planner/time-format.pipe';
 
 
 @NgModule({
   declarations: [AppComponent,
     InquiryDetailsComponent,
     LoginComponent,
+    
 
 
   ],

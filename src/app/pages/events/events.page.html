@@ -11,7 +11,7 @@
   <div class="flex items-center dark:bg-gray-900 font-['Open_Sans']">
     <div class="container max-w-6xl px-5 mx-auto my-6">
       <div class="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
-        <div class="flex  items-center justify-between p-5 rounded-lg shadow-sm" *ngFor="let inquiry of inquiries"
+        <!-- <div class="flex  items-center justify-between p-5 rounded-lg shadow-sm" *ngFor="let inquiry of inquiries"
           [style.background]="randomBackgroundColor()">
           <div>
             <div class="text-sm text-white ">Event id : {{inquiry.id}}</div>
@@ -23,6 +23,22 @@
           </div>
           <div class="text-gray-300">
             <ion-icon name="chevron-forward-outline" class="text-white"></ion-icon>
+          </div>
+        </div> -->
+        <div class="flex border-l-8 border-l-red-200 items-center bg-white justify-between p-5 rounded-lg shadow-xl"
+          *ngFor="let inquiry of inquiries">
+          <div>
+            <div class="text-sm ellipsis text-gray-700 ">Event id : {{inquiry.id}}</div>
+            <div class="flex items-center pt-1">
+              <div class="text-md font-medium text-gray-600 ">
+                <h2 class="ellipsis">{{inquiry.brideName}} & {{inquiry.groomName}}</h2>
+              </div>
+            </div>
+          </div>
+          <div class="text-gray-300">
+            <ion-buttons>
+              <ion-icon name="chevron-forward-outline" class="text-gray-600 "></ion-icon>
+            </ion-buttons>
           </div>
         </div>
 

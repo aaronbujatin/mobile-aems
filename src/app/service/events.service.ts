@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { environment } from './../../environments/environment';
+import { environment } from 'src/environments/environment.prod';
 
 
 @Injectable({
@@ -10,7 +10,7 @@ export class EventsService {
 
   constructor(private httpClient : HttpClient) { }
 
-  private eventsApi = environment.baseUrl
+  private eventsApi = environment.baseUrl;
 
   getAllEvents() {
     return this.httpClient.get(`${this.eventsApi}/api/v1/users`)

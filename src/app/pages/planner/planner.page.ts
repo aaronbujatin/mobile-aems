@@ -4,11 +4,13 @@ import { IonModal, NavController } from '@ionic/angular';
 import { OverlayEventDetail } from '@ionic/core/components';
 import { Planner } from 'src/app/model/planner.model';
 import { PlannerService } from 'src/app/service/planner.service';
+
 @Component({
   selector: 'app-planner',
   templateUrl: './planner.page.html',
   styleUrls: ['./planner.page.scss'],
 })
+
 export class PlannerPage implements OnInit {
 
   constructor(private navCtrl: NavController, private plannerService : PlannerService) { }
@@ -34,7 +36,14 @@ export class PlannerPage implements OnInit {
   confirm() {
     this.plannerService.savePlanner(this.planner).subscribe(
       (response : any) => {
-        this.plannerForm.resetForm()
+        this.getAllPlanner()
+        this.planner = {
+          id: "",
+          message: "",
+          location: "",
+          date: "",
+          time: ""
+        };
         this.modal.dismiss(null, 'cancel');
         console.log(response);
       }, 
@@ -84,6 +93,6 @@ export class PlannerPage implements OnInit {
 
   selectedDateTime!: string;
 
-
+  
 
 }

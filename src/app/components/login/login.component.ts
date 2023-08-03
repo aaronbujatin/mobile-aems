@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { InquiryDetailsComponent } from '../inquiry-details/inquiry-details.component';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -9,24 +10,15 @@ import { InquiryDetailsComponent } from '../inquiry-details/inquiry-details.comp
 })
 export class LoginComponent  implements OnInit {
 
-  constructor(private router : Router) { }
+  constructor(private router : Router, private navCtrl: NavController) { }
 
   ngOnInit() {}
 
   
-  onClick() {
-    console.log("Login button clicked");
-
-    // this.router.navigate(['/inquiry']);
+   // This function is called when the user clicks the "Login" button.
+   login() {
+    // Assuming the login is successful, navigate to the tabs page.
+    this.navCtrl.navigateRoot('/tabs/events');
   }
-
-  component = InquiryDetailsComponent;
-
-  
-
-  navigate(){
-    this.router.navigate(['/tabs/events'])
-  }
-
 
 }

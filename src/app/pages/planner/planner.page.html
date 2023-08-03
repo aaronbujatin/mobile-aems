@@ -25,8 +25,12 @@
             <div class="flex items-center pt-1">
               <div class="text-sm font-medium">
                 <div class="flex">
+                  <ion-icon name="calendar-number-outline" class="text-red-400 text-base pr-1"></ion-icon>
+                  <h2 class="ellipsis text-gray-700">{{plan.date | date:'mediumDate'}}</h2>
+                </div>
+                <div class="flex mt-1">
                   <ion-icon name="time-outline" class="text-red-400 text-base pr-1"></ion-icon>
-                  <h2 class="ellipsis text-gray-700">{{plan.date}} {{plan.time}}</h2>
+                  <h2 class="ellipsis text-gray-700">{{plan.time | timeFormat }}</h2>
                 </div>
                 <div class="flex mt-1">
                   <ion-icon name="location-outline" class="text-red-400 text-base pr-1"></ion-icon>
@@ -48,6 +52,7 @@
     <ng-template>
       
       <ion-content class="ion-padding">
+        <h1 class="font-['Pp_Fragments'] pl-6 text-4xl mx-auto text-center items-center mt-4 text-gray-700">Add Plan</h1>
         <form action="" class="mx-auto mb-0 mt-8 max-w-md space-y-4 px-10 font-['Open_Sans']" #plannerForm="ngForm"
           >
           <div>
@@ -57,7 +62,7 @@
               <input class="w-full  border-2 border-[#E8AAAD] p-4 pe-12 text-sm shadow-sm outline-none rounded-lg"
                 placeholder="Enter to do" id="message" type="text" required [(ngModel)]="planner.message"
                 name="message" />
-              <p>{{planner.message}}</p>
+              
             </div>
           </div>
 
@@ -79,7 +84,7 @@
               <input class="w-full  border-2 border-[#E8AAAD] p-4 pe-12 text-sm shadow-sm outline-none rounded-lg"
                 placeholder="Enter date and time" id="date" type="date" required [(ngModel)]="planner.date"
                 name="date" />
-              <p>{{planner.date}}</p>
+              
             </div>
           </div>
           <div>

@@ -5,9 +5,9 @@ import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
 
+  { path: '', redirectTo: 'tabs/events', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'inquiry', component : InquiryDetailsComponent },
-  
   {
     path: '',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
